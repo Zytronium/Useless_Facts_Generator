@@ -20,11 +20,10 @@ body::after {
 /* Container */
 .container {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.125);
     text-align: center;
-    width: 90%;
     max-width: 650px;
     margin: auto 20px;
     transition: background 0.3s, color 0.3s;
@@ -132,4 +131,36 @@ button {
 
 .dark-mode #dark-mode-btn {
     color: #f4f4f4;
+}
+
+/* Media Responsiveness for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 85%;
+    }
+
+    p {
+        margin: 5px auto;
+        font-size: 19px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        margin: 10px auto;
+        font-size: 18px;
+    }
+
+    #dark-mode-btn {
+        font-size: 32px;
+        top: -5px;
+        right: -5px;
+    }
+
+    .attribution {
+        font-size: 10px;
+    }
 }
