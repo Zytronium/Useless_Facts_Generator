@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     transition: background 0.3s, color 0.3s;
-    background-image: url('images/background-light.png');
+    background-image: url('images/background-light.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,35 +20,49 @@ body::after {
 /* Container */
 .container {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.125);
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 650px;
     transition: background 0.3s, color 0.3s;
 }
 
 /* Header & Paragraph */
 h1 {
-    font-size: 24px;
+    font-size: 36px;
     color: #333;
 }
 
 p {
-    font-size: 18px;
+    font-size: 27px;
     color: #555;
     margin: 20px 0;
 }
 
+.attribution {
+     position: absolute;
+     bottom: 10px;
+     left: 10px;
+     font-size: 18px; /* Tiny font size */
+     color: gray; /* Gray font color */
+     text-decoration: none; /* No underline */
+ }
+
+.attribution:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
 /* Generate Fact Button */
 button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 15px;
+    padding: 15px 30px;
+    font-size: 24px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
@@ -62,6 +76,10 @@ button {
     transform: scale(1.05);
 }
 
+#generate-btn:active {
+    transform: scale(0.99);
+}
+
 /* Dark Mode Button */
 #dark-mode-btn {
     position: absolute;
@@ -69,20 +87,24 @@ button {
     right: 15px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 36px;
     cursor: pointer;
     transition: transform 0.2s;
     color: #333;
 }
 
 #dark-mode-btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+#dark-mode-btn:active {
+    transform: scale(0.45);
 }
 
 /* Dark Theme */
 .dark-mode {
     color: #f4f4f4;
-    background-image: url('images/background-dark.png');
+    background-image: url('images/background-dark.jpg');
 }
 
 .dark-mode .container {
