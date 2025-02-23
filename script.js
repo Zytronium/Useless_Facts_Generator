@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const factText = document.getElementById("fact");
     const generateBtn = document.getElementById("generate-btn");
     const darkModeBtn = document.getElementById("dark-mode-btn");
+    const darkModeIcon = darkModeBtn.querySelector("i");
 
     const facts = [
         "A group of flamingos is called a 'flamboyance'.",
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Humans share about 60% of their DNA with bananas.",
         "You can hear a blue whale’s heartbeat from over 2 miles away.",
         "Sea otters hold hands while sleeping to keep from drifting apart.",
+        "Cows have best friends and get stressed when separated.",
         "If you lift a kangaroo's tail off the ground, it can’t hop.",
         "Snails have thousands of microscopic teeth on their tongue.",
         "A group of crows is called a \"murder\".",
@@ -190,23 +192,29 @@ document.addEventListener("DOMContentLoaded", () => {
         factText.textContent = facts[Math.floor(Math.random() * facts.length)];
     });
 
-    // Dark mode toggle function
+    // Function to toggle dark mode
     function toggleDarkMode() {
         document.body.classList.toggle("dark-mode");
 
-        // Save dark mode preference in localStorage
+        // Change icon
         if (document.body.classList.contains("dark-mode")) {
+            darkModeIcon.classList.remove("fa-moon");
+            darkModeIcon.classList.add("fa-sun");
             localStorage.setItem("darkMode", "enabled");
         } else {
+            darkModeIcon.classList.remove("fa-sun");
+            darkModeIcon.classList.add("fa-moon");
             localStorage.setItem("darkMode", "disabled");
         }
     }
 
-    // Apply saved dark mode setting
+    // Load saved dark mode state
     if (localStorage.getItem("darkMode") === "enabled") {
         document.body.classList.add("dark-mode");
+        darkModeIcon.classList.remove("fa-moon");
+        darkModeIcon.classList.add("fa-sun");
     }
 
-    // Dark Mode button event
+    // Event listener for dark mode button
     darkModeBtn.addEventListener("click", toggleDarkMode);
 });
